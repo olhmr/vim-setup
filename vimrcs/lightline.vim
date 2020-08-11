@@ -1,9 +1,30 @@
 " Status line / tabline
 " Shamelessly stolen (with modifications) from here: https://github.com/zenbro/dotfiles/blob/d3f4bd3136aab297191c062345dfc680abb1efac/.nvimrc
-" [ 'syntastic' ], doesn't do anything
 
 " Always show the status line
 set laststatus=2
+
+" Inspiration from vimrc Awesome Version
+"let g:lightline = {
+"      \ 'colorscheme': 'wombat',
+"      \ 'active': {
+"      \   'left': [ ['mode', 'paste'],
+"      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+"      \   'right': [ [ 'lineinfo' ], ['percent'] ]
+"      \ },
+"      \ 'component': {
+"      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+"      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+"      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
+"      \ },
+"      \ 'component_visible_condition': {
+"      \   'readonly': '(&filetype!="help"&& &readonly)',
+"      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+"      \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+"      \ },
+"      \ 'separator': { 'left': ' ', 'right': ' ' },
+"      \ 'subseparator': { 'left': ' ', 'right': ' ' }
+"      \ }
 
 let g:lightline = {
             \ 'colorscheme': 'seoul256',
@@ -11,7 +32,6 @@ let g:lightline = {
             \   'left': [ [ 'mode', 'paste' ],
             \             [ 'fugitive', 'gitgutter', 'filename' ] ],
             \   'right': [ [ 'percent', 'lineinfo' ],
-            \              [ 'syntastic' ],
             \              [ 'fileformat', 'fileencoding', 'filetype' ], ['linter_warnings', 'linter_errors', 'linter_ok'] ]
             \ },
             \ 'component_function': {
@@ -31,6 +51,7 @@ let g:lightline = {
             \   'linter_errors': 'error'
             \ }
             \ }
+
 function! LightLineModified()
     if &filetype == "help"
         return ""
