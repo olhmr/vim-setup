@@ -17,6 +17,7 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'vimwiki/vimwiki'
+Plug 'airblade/vim-gitgutter'
 
 " Snipmate
 Plug 'tomtom/tlib_vim'
