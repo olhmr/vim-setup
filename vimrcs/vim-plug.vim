@@ -18,6 +18,7 @@ Plug 'tpope/vim-surround'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Snipmate
 Plug 'tomtom/tlib_vim'

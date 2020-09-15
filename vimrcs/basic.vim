@@ -122,6 +122,21 @@ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 nnoremap \ ,
 vnoremap \ ,
 
+" Ignore whitespace in diff
+set diffopt+=iwhite
+set diffexpr=DiffW()
+function DiffW()
+  let opt = ""
+   if &diffopt =~ "icase"
+     let opt = opt . "-i "
+   endif
+   if &diffopt =~ "iwhite"
+     let opt = opt . "-w " " swapped vim's -b with -w
+   endif
+   silent execute "!diff -a --binary " . opt .
+     \ v:fname_in . " " . v:fname_new .  " > " . v:fname_out
+endfunction
+
 
 "---------------"
 " Miscellaneous "
@@ -139,7 +154,7 @@ endtry
 
 " Enable wildmode
 :set wildignorecase
-:set wildmode=list:longest,full " this is worth playing around with
+:set wildmode=longest,full " this is worth playing around with
 
 " Ignore compiled files in wildmode
 set wildignore=*.o,*~,*.pyc
@@ -181,6 +196,10 @@ noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Exit nvim terminal
 tnoremap <Esc> <C-\><C-n>
+
+" Copy name of file
+nmap ,cs :let @*=expand("%")<CR>
+nmap ,cl :let @*=expand("%:p")<CR>
 
 
 "--------------------"
