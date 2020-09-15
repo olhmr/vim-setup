@@ -19,6 +19,7 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'junegunn/vim-peekaboo'
 
 " Snipmate
 Plug 'tomtom/tlib_vim'
