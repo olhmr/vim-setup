@@ -449,3 +449,6 @@ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 " Autofold results by filename
 let g:ack_autofold_results = 1
+
+" Automatically previes files
+let g:ackpreview = 1
