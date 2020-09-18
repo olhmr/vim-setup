@@ -411,4 +411,4 @@ let g:vimwiki_list = [{'path': '~/workspace/notes/vim-wiki'}]
 " vim-peekaboo "
 "--------------"
 
-let g:peekaboo_window="vert abo 30new"
+" let g:peekaboo_window="vert abo 30new"
