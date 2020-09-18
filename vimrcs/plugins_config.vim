@@ -412,3 +412,37 @@ let g:vimwiki_list = [{'path': '~/workspace/notes/vim-wiki'}]
 "--------------"
 
 " let g:peekaboo_window="vert abo 30new"
+
+"-----"
+" Ack "
+"-----"
+
+" Use the the_silver_searcher if possible (much faster than Ack)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
+
+" When you press gv you Ack after the selected text
+vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
+
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+" Open Ack and put the cursor in the right position
+map <leader>g :Ack 
+
+" Display results in cope
+map <leader>cc :botright cope<cr>
+
+" Display results in new tab
+map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+
+" Go to next search result
+map <leader>n :cn<cr>
+
+" Go the previous search result
+" this was <leader>p before, but I prefer this
+map <leader>N :cp<cr>
+
+" Make sure that enter is never overriden in the quickfix window
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
