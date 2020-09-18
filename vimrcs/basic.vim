@@ -276,8 +276,10 @@ map <leader>h :bprevious<cr>
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Specify the behavior when switching between buffers 
+" Changing to useopen only to get better behaviour out of Ack
 try
-  set switchbuf=useopen,usetab,newtab
+  " set switchbuf=useopen,usetab,newtab
+  set switchbuf=useopen
   set stal=2
 catch
 endtry
