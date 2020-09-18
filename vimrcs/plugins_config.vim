@@ -446,3 +446,6 @@ map <leader>N :cp<cr>
 
 " Make sure that enter is never overriden in the quickfix window
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+
+" Autofold results by filename
+let g:ack_autofold_results = 1
