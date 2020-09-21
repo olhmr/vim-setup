@@ -329,8 +329,8 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 " <leader>f clashes with ctrlp
-xmap <leader>y  <Plug>(coc-format-selected)
-nmap <leader>y  <Plug>(coc-format-selected)
+xmap <leader>u  <Plug>(coc-format-selected)
+nmap <leader>u  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
