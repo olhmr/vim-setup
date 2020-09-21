@@ -172,6 +172,12 @@ nmap ,cs :let @*=expand("%")<CR>
 nmap ,cl :let @*=expand("%:p")<CR>
 
 
+" Yank, paste, and delete using system clipboard
+noremap <leader>y "+y
+noremap <leader>p "+p
+noremap <leader>d "+d
+
+
 "--------------------"
 " Reading and Saving "
 "--------------------"
