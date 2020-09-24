@@ -57,6 +57,7 @@ set mat=2 " How many tenths of a second to blink when matching brackets
 set foldcolumn=1 " Add a bit extra margin to the left
 set shortmess+=c " Added for CoC to not pass messages to |ins-completion-menu|.
 set signcolumn=yes " Always show column to the left
+set cc=80 " Add vertical at 80
 
 " Basic tab setup
 set expandtab " Use spaces instead of tabs
