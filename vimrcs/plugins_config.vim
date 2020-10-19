@@ -457,3 +457,5 @@ let g:ackpreview = 1
 " neoterm "
 "---------"
 
+nnoremap <leader>tq :exec('T cat % \| bq query')<CR>
+nnoremap <leader>td :exec('T cat % \| bq query --dry_run')<CR>
