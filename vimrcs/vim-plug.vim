@@ -21,6 +21,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/vim-peekaboo'
+Plug 'kassio/neoterm'
 
 " Snipmate
 Plug 'tomtom/tlib_vim'
