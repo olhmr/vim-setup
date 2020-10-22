@@ -459,3 +459,4 @@ let g:ackpreview = 1
 
 nnoremap <leader>tq :exec('T cat % \| bq query')
 nnoremap <leader>td :exec('T cat % \| bq_dry')<CR>
+nnoremap <leader>tf :exec('T cat % \| bq query --format=csv > output.csv')
