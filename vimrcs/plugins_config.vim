@@ -457,6 +457,6 @@ let g:ackpreview = 1
 " neoterm "
 "---------"
 
-nnoremap <leader>tq :exec('T cat % \| bq query')
+nnoremap <leader>tq :exec('T cat % \| bq query --max_rows=10')
 nnoremap <leader>td :exec('T cat % \| bq_dry')<CR>
-nnoremap <leader>tf :exec('T cat % \| bq query --format=csv > output.csv')
+nnoremap <leader>tf :exec('T cat % \| bq query --format=csv --max_rows=1000 > output.csv')
