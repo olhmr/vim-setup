@@ -459,3 +459,4 @@ let g:ackpreview = 1
 nnoremap <leader>tq :exec('T cat % \| bq query --max_rows=10')
 nnoremap <leader>td :exec('T cat % \| bq_dry')<CR>
 nnoremap <leader>tf :exec('T cat % \| bq query --format=csv --max_rows=1000 > output.csv')
+nnoremap <leader>ts <Plug>(neoterm-repl-send)
