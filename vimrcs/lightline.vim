@@ -76,4 +76,10 @@ function! LightlineLinterOK() abort
   return l:counts.total == 0 ? '✓' : ''
 endfunction
 
-autocmd User ALELint call lightline#update() " check if this is needed
+" From https://github.com/maximbaz/lightline-ale/blob/master/plugin/lightline/ale.vim
+augroup lightline#ale
+  autocmd!
+  autocmd User ALEJobStarted call lightline#update()
+  autocmd User ALELintPost call lightline#update()
+  autocmd User ALEFixPost call lightline#update()
+augroup end
