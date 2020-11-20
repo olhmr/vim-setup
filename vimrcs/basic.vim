@@ -49,7 +49,7 @@ source $VIMRUNTIME/menu.vim
 
 set nocompatible " For vimwiki
 set ruler " Always show position
-set cmdheight=2 " Height of command bar
+set cmdheight=1 " Height of command bar
 set hidden " Hide buffers when abandoned
 set lazyredraw " Don't redraw while executing macros (good performance config)
 set showmatch " Show matching brackets when text indicator is over them
