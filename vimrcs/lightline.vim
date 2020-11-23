@@ -7,6 +7,8 @@ set noshowmode " Don't show -- INSERT -- below lightline
 " Set up lightline options
 let g:lightline = {
   \ 'colorscheme': 'srcery_drk',
+  \ 'separator': { 'left': '', 'right': '' },
+  \ 'subseparator': { 'left': '', 'right': '' },
   \ 'active': {
     \ 'left': [ [ 'mode', 'paste' ],
       \         [ 'readonly', 'fugitive', 'modified', 'gitgutter' ] ],
