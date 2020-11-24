@@ -4,7 +4,6 @@ Plug 'mileszs/ack.vim'
 Plug 'dense-analysis/ale'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'kien/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'yegappan/mru'
 Plug 'guns/vim-clojure-static'
@@ -22,6 +21,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/vim-peekaboo'
 Plug 'kassio/neoterm'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'pbogut/fzf-mru.vim'
 
 " Snipmate
 Plug 'tomtom/tlib_vim'

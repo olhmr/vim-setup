@@ -27,25 +27,38 @@ nmap <C-p> <Plug>yankstack_substitute_older_paste
 nmap <C-n> <Plug>yankstack_substitute_newer_paste
 
 
-"--------"
-" CTRL-P "
-"--------"
+"-----"
+" FZF "
+"-----"
 
-let g:ctrlp_working_path_mode = 0
+" Inspiration here: https://github.com/zenbro/dotfiles/blob/master/.nvimrc#L220-L264
+" And here: https://github.com/euclio/vimrc/blob/master/plugins.vim#L174-L188
 
-" Quickly find and open a file in the current working directory
-let g:ctrlp_map = '<C-f>'
-map <leader>d :CtrlP<cr>
+" For opening search results
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-i': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
-" Quickly find and open a buffer
-map <leader>b :CtrlPBuffer<cr>
+" Basic FZF
+nnoremap <leader>ff :Files<CR>
 
-" Quickly find and open a recently opened file
-map <leader>f :CtrlPMRU<CR>
+" Find buffer
+nnoremap <leader>fb :Buffers<CR>
 
-let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+" Find recent file using https://github.com/pbogut/fzf-mru.vim
+nnoremap <leader>fh :FZFMru<CR>
 
+" Find line in any buffer
+nnoremap <leader>fl :Lines<CR>
+
+" Find mark
+nnoremap <leader>fm :Marks<CR>
+
+" Find comit in current buffer
+nnoremap <leader>fc :BCommits<CR>
+
+" Could do something for snippets as well, but needs ultisnips
 
 "----------"
 " snipMate "
