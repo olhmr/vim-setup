@@ -271,10 +271,6 @@ endfunction
 " Close all buffers
 map <leader>ba :bufdo bd<cr>
 
-" Go to next/previous buffer with l/h
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
-
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
