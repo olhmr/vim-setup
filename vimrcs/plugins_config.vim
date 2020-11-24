@@ -235,6 +235,7 @@ nmap <silent> <leader>A <Plug>(ale_previous_wrap)
 
 let g:gitgutter_enabled=1
 let g:gitgutter_signs=1
+let g:gitgutter_map_keys = 0
 " let g:gitgutter_highlight_lines = 1
 nnoremap <silent> <leader>j :GitGutterToggle<cr>
 
