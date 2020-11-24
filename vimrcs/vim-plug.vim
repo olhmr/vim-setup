@@ -24,6 +24,7 @@ Plug 'kassio/neoterm'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
+Plug 'kshenoy/vim-signature'
 
 " Snipmate
 Plug 'tomtom/tlib_vim'
