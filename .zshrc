@@ -77,7 +77,6 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   autojump
-  git-open
 )
 
 source $ZSH/oh-my-zsh.sh
