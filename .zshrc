@@ -78,6 +78,7 @@ plugins=(
   git
   autojump
   zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
