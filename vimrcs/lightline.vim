@@ -11,7 +11,7 @@ let g:lightline = {
   \ 'subseparator': { 'left': '', 'right': '' },
   \ 'active': {
     \ 'left': [ [ 'mode', 'paste' ],
-      \         [ 'readonly', 'fugitive', 'modified', 'gitgutter' ] ],
+      \         [ 'absolutepath', 'readonly', 'fugitive', 'modified', 'gitgutter' ] ],
     \ 'right': [ [ 'percent', 'lineinfo' ],
       \          [ 'fileformat', 'fileencoding', 'filetype' ],
       \          [ 'linter_warnings', 'linter_errors', 'linter_ok' ] ]
