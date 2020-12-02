@@ -1,2 +1,25 @@
 snippet ref 
-	\{\{ ref('${1:model}') \}\}
+	\{\{ ref('${0:model}') \}\}
+snippet dyn
+	\{\{ ref('${0:model}') \}\}
+snippet group
+	\{\{ group_by(${0:number}) \}\}
+snippet config
+	\{\{
+		config(
+			database='${1:database}',
+			schema='${2:schema}',
+			alias='${3:alias}',
+			tags=[
+				'loc=eu',
+				'tier=${4:tier}',
+				'team=${5:team}',
+				'schedule=${6:schedule}',
+			],
+			materialized='${7:materialization}',
+			incremental_strategy='${8:strategy}',
+			partition_by=${'field': '${9:field}',
+										'data_type': '${10:type}'\},
+			unique_key='${11:key}'
+		)
+	\}\}
