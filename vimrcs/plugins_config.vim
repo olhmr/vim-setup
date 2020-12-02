@@ -69,7 +69,9 @@ command! -bang -nargs=* Rg
   \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', 'ctrl-/'), <bang>0)
 nnoremap <leader>g :Rg<CR>
 
-" Could do something for snippets as well, but needs ultisnips
+" Search snippets (uses ultisnips)
+nnoremap <leader>fs :Snippets<CR>
+
 
 "----------"
 " snipMate "
