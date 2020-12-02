@@ -41,7 +41,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " Basic FZF
-nnoremap <leader>ff :Files<CR>
+nnoremap <c-f> :Files<CR>
 
 " Find buffer
 nnoremap <leader>fb :Buffers<CR>
