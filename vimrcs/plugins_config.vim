@@ -58,11 +58,16 @@ nnoremap <leader>fm :Marks<CR>
 " Find comit in current buffer
 nnoremap <leader>fc :BCommits<CR>
 
-" Search with ag
-nnoremap <leader>g :Ag<CR>
-
 " Search with ripgrep
-nnoremap <leader>rg :Rg<CR>
+" First make rg not include file names in search
+" From here: https://github.com/junegunn/fzf/issues/1109
+" And here: https://github.com/junegunn/fzf.vim/issues/346
+" And here: https://github.com/junegunn/fzf.vim/issues/1051
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', 'ctrl-/'), <bang>0)
+nnoremap <leader>g :Rg<CR>
 
 " Could do something for snippets as well, but needs ultisnips
 
