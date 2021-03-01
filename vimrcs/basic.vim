@@ -157,7 +157,7 @@ map <leader>ss :setlocal spell!<cr>
 tnoremap <Esc> <C-\><C-n>
 
 " Copy name of file
-nmap ,cs :let @*=expand("%")<CR>
+nmap ,cs :let @*=expand("%:t")<CR>
 nmap ,cl :let @*=expand("%:p")<CR>
 
 
