@@ -4,6 +4,7 @@
 
 " Define leader
 let mapleader = ","
+let maplocalleader = "\\"
 
 " Enable filetype plugins
 filetype plugin on
