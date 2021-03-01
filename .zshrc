@@ -101,7 +101,6 @@ u k8s force-cron -n ldn $1
 }
 
 # Git and github
-alias gito='git-open'
 alias glb='git branch -a | grep -v remote'
 function grpop() {
   git remote prune origin
@@ -133,16 +132,7 @@ function bq_dry() {
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-
 #--------------------#
-
-# Require active virtualenv for pip
-export PIP_REQUIRE_VIRTUALENV=true
-
-# Function to override and install a package globally
-global_pip() {
-    PIP_REQUIRE_VIRTUALENV="" pip "$@"
-}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
