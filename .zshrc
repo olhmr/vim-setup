@@ -80,6 +80,19 @@ alias notes='nvim ~/workspace/ad-hoc/notes/'
 alias edit-vimrc='nvim ~/.vimrc'
 alias edit-vim-runtime='nvim ~/.vim_runtime/'
 
+# Searching
+export FZF_DEFAULT_COMMAND='rg --files' # faster than the default
+function f() { # search files and open in neovim
+  nvim -o `fzf --preview 'bat --style numbers,changes --color=always {} | head -500' $@`
+}
+function fl() { # search only current directory and open in neovim
+  ls | f
+}
+function ff() { # search inside files and open in neovim - https://www.reddit.com/r/commandline/comments/fu6zzp/search_file_content_with_fzf/fmb7frf?utm_source=share&utm_medium=web2x&context=3
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  nvim -o `rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"`
+}
+
 # Kubernetes
 alias switch-blue='kubectl config use-context blue.kube.usw.co'
 alias kldn='kubectl -n ldn'
