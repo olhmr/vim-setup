@@ -108,36 +108,6 @@ map <leader>nf :NERDTreeFind<cr>
 let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
 
-" This still doesn't work properly, causing square brackets
-" Using the below instead of vim-nerdtree-syntax-higlighting as the latter causes lag
-" This still has issues with rendering square brackets, issue (closed) here: https://github.com/ryanoasis/vim-devicons/issues/215
-" NERDTrees File highlighting
-" function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-"  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-"  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-" endfunction
-
-" call NERDTreeHighlightFile('md', 'red', 'none', 'red', '#151515')
-" call NERDTreeHighlightFile('sql', 'blue', 'none', 'blue', '#151515')
-" call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-" call NERDTreeHighlightFile('clj', 'yellow', 'none', 'yellow', '#151515')
-" call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-" call NERDTreeHighlightFile('jar', 'red', 'none', 'red', '#151515')
-
-" Changing the NERDTree symbols
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : " ",
-    \ "Staged"    : " ",
-    \ "Untracked" : "ﱡ ",
-    \ "Renamed"   : " ",
-    \ "Unmerged"  : " ",
-    \ "Deleted"   : " ",
-    \ "Dirty"     : " ",
-    \ "Clean"     : " ",
-    \ "Ignored"   : " ",
-    \ "Unknown"   : " "
-    \ }
-
 
 "-------------------------------"
 " vim-nerdtree-syntax-highlight "
@@ -263,9 +233,9 @@ highlight GitGutterAdd    guifg='green' ctermfg=2
 highlight GitGutterChange guifg='yellow' ctermfg=3
 highlight GitGutterDelete guifg='red' ctermfg=1
 
-let g:gitgutter_sign_added = ' '
-let g:gitgutter_sign_modified = ' '
-let g:gitgutter_sign_removed = ' '
+" let g:gitgutter_sign_added = ' '
+" let g:gitgutter_sign_modified = ' '
+" let g:gitgutter_sign_removed = ' '
 " let g:gitgutter_sign_removed_first_line = '^^'
 " let g:gitgutter_sign_modified_removed = 'ww'
 
@@ -283,6 +253,7 @@ let g:gist_post_private = 1
 "---------"
 
 let g:vimwiki_list = [{'path': '~/workspace/notes/vim-wiki'}]
+
 
 "--------------"
 " vim-peekaboo "
@@ -312,6 +283,7 @@ function! CreateCenteredFloatingWindow()
     au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
 let g:peekaboo_window="call CreateCenteredFloatingWindow()"
+
 
 "---------"
 " neoterm "
