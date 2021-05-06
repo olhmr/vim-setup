@@ -1,3 +1,15 @@
+"----------------------"
+" Startup optimisation "
+"----------------------"
+
+let g:loaded_ruby_provider=0
+let g:loaded_python_provider=0
+let g:python_host_skip_check=1
+let g:python3_host_skip_check=1
+let g:python3_host_prog='/Users/olhmr/anaconda3/bin/python3'
+let g:node_host_prog='/usr/local/bin/node'
+
+
 "---------"
 " Initial "
 "---------"
