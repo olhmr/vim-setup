@@ -28,6 +28,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'lepture/vim-jinja'
+Plug 'numirias/semshi'
 
 " These need to be in order according to nerdtree-git-plugin
 Plug 'preservim/nerdtree' |
