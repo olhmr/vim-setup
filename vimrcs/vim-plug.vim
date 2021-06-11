@@ -33,6 +33,7 @@ Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " These need to be in order according to nerdtree-git-plugin
 Plug 'preservim/nerdtree' |
