@@ -299,3 +299,29 @@ nnoremap <leader>ts <Plug>(neoterm-repl-send)
 "-----------"
 
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+
+"----------"
+" deoplete "
+"----------"
+
+let g:deoplete#enable_at_startup = 1
+
+" <TAB>: completion - from https://github.com/Shougo/deoplete.nvim/issues/302
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+
+"---------"
+" jed-vim "
+"---------"
+
+" disable autocompletion, because we use deoplete for completion
+let g:jedi#completions_enabled = 0
+
+" open the go-to function in split, not another buffer
+let g:jedi#use_splits_not_buffers = "right"
+
+" remap go to assignment because I want fzf ripgrep in-file search on
+" <leader>g
+let g:jedi#goto_assignments_command = "<leader>h"
