@@ -90,7 +90,7 @@ function ff() { # search inside files and open in neovim - https://www.reddit.co
 alias switch-blue='kubectl config use-context blue.kube.usw.co'
 alias kldn='kubectl -n ldn'
 function force-cron() {
-u k8s force-cron -n ldn $1
+  u k8s force-cron -n ldn $1
 }
 
 # Git and github
@@ -98,7 +98,7 @@ alias glb='git branch -a | grep -v remote'
 
 # dbt
 function dbtpp() {
-    dbt --partial-parse $@
+  dbt --partial-parse $@
 }
 
 # BigQuery CLI
@@ -115,6 +115,11 @@ function bq_dry() {
     # Print the full message
     echo $RESULT
   fi
+}
+
+# Great Expectations
+function ge() {
+  great_expectations $@
 }
 
 #--------------------#
