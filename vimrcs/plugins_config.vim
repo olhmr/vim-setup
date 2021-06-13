@@ -244,7 +244,8 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 " deoplete "
 "----------"
 
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
+autocmd InsertEnter * call deoplete#enable()
 
 " <TAB>: completion - from https://github.com/Shougo/deoplete.nvim/issues/302
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
