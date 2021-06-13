@@ -117,7 +117,6 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 
-
 " Define some colours to work with
 let s:brown = "905532"
 let s:aqua =  "3AFFDB"
@@ -142,44 +141,6 @@ let s:git_orange = 'F54D27'
 let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
 let g:NERDTreeExtensionHighlightColor['md'] = s:salmon " sets the color of css files to blue
 
-" let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
-" let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
-
-" let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
-" let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
-
-" let g:WebDevIconsDefaultFolderSymbolColor = s:beige " sets the color for folders that did not match any rule
-" let g:WebDevIconsDefaultFileSymbolColor = s:blue " sets the color for files that did not match any rule
-
-
-"----------------------"
-" vim-multiple-cursors "
-"----------------------"
-
-" Leaving this here in case I want to add it later
-" Should be replaced with https://github.com/mg979/vim-visual-multi as per the repo though
-
-" let g:multi_cursor_use_default_mapping=0
-
-" " Default mapping
-" let g:multi_cursor_start_word_key      = '<C-s>'
-" let g:multi_cursor_select_all_word_key = '<A-s>'
-" let g:multi_cursor_start_key           = 'g<C-s>'
-" let g:multi_cursor_select_all_key      = 'g<A-s>'
-" let g:multi_cursor_next_key            = '<C-s>'
-" let g:multi_cursor_prev_key            = '<C-p>'
-" let g:multi_cursor_skip_key            = '<C-x>'
-" let g:multi_cursor_quit_key            = '<Esc>'
-
-
-"--------------"
-" surround.vim "
-"--------------"
-
-" NB: ({< adds space around, whereas >}) does not
-vmap Si S(i_<esc>f)
-au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
-
 
 "-----"
 " Ale "
@@ -197,13 +158,6 @@ let g:ale_disable_lsp = 1
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 nmap <silent> <leader>A <Plug>(ale_previous_wrap)
 
-" " Disabling highlighting
-" let g:ale_set_highlights = 0
-
-" " Only run linting when saving the file
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_enter = 0
-
 
 "-----------"
 " Gitgutter "
@@ -212,7 +166,6 @@ nmap <silent> <leader>A <Plug>(ale_previous_wrap)
 let g:gitgutter_enabled=1
 let g:gitgutter_signs=1
 let g:gitgutter_map_keys = 0
-" let g:gitgutter_highlight_lines = 1
 nnoremap <silent> <leader>j :GitGutterToggle<cr>
 
 " For lightline
@@ -224,12 +177,6 @@ endfunction
 highlight GitGutterAdd    guifg='green' ctermfg=2
 highlight GitGutterChange guifg='yellow' ctermfg=3
 highlight GitGutterDelete guifg='red' ctermfg=1
-
-" let g:gitgutter_sign_added = ' '
-" let g:gitgutter_sign_modified = ' '
-" let g:gitgutter_sign_removed = ' '
-" let g:gitgutter_sign_removed_first_line = '^^'
-" let g:gitgutter_sign_modified_removed = 'ww'
 
 
 "------"
