@@ -82,14 +82,6 @@ ino <C-j> <C-r>=snipMate#TriggerSnippet()<cr>
 snor <C-j> <esc>i<right><C-r>=snipMate#TriggerSnippet()<cr>
 
 
-"----------"
-" Vim grep "
-"----------"
-
-let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
-set grepprg=/bin/grep\ -nH
-
-
 "-----------"
 " Nerd Tree "
 "-----------"
