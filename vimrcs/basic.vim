@@ -123,7 +123,7 @@ set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*/env/*
 " Configure backspace so it acts as it should act
 " https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
 set backspace=eol,start,indent 
-set whichwrap+=<,>,h,l
+set whichwrap+=<,>,h,l,[,]
 
 " No annoying sound on errors
 set noerrorbells
