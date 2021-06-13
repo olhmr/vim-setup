@@ -31,18 +31,6 @@ filetype indent on
 " highlight colours swapped, to prevent cursor from becoming invisible
 colorscheme gruvbox " ~/.vim/colors/gruvbox.vim, https://github.com/morhetz/gruvbox
 
-syntax enable " Enable syntax higlighting - seems to be enabled anyway?
-set background=dark
-
-" Shell colours
-if exists('$TMUX') 
-    if has('nvim')
-        set termguicolors
-    else
-        set term=screen-256color 
-    endif
-endif
-
 " Enabling both number and relative number produces hybrid number
 set number
 set relativenumber 
@@ -54,12 +42,6 @@ set relativenumber
 " Set how many lines to keep on the screen when scrolling
 set scrolloff=7
 
-" Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
-set langmenu=en
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
 set nocompatible " For vimwiki
 set ruler " Always show position
 set cmdheight=1 " Height of command bar
@@ -68,7 +50,6 @@ set lazyredraw " Don't redraw while executing macros (good performance config)
 set showmatch " Show matching brackets when text indicator is over them
 set mat=2 " How many tenths of a second to blink when matching brackets
 set foldcolumn=0 " Amount of extra margin to the left
-set shortmess+=c " Added for CoC to not pass messages to |ins-completion-menu|.
 set signcolumn=yes " Always show column to the left
 set cc=80 " Add vertical at 80
 
@@ -137,12 +118,6 @@ endtry
 :set wildmode=longest,full " this is worth playing around with
 
 " Ignore compiled files in wildmode
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -165,13 +140,9 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
-" Exit nvim terminal
-tnoremap <Esc> <C-\><C-n>
-
 " Copy name of file
 nmap ,cs :let @*=expand("%:t")<CR>
 nmap ,cl :let @*=expand("%:p")<CR>
-
 
 " Yank, paste, and delete using system clipboard
 noremap <leader>y "+y
@@ -188,16 +159,10 @@ set autoread
 au FocusGained,BufEnter * checktime
 
 " Fast saving
-nmap <leader>w :w!<cr>
-
-" :W sudo saves the file - doesn't work for neovim
-" (useful for handling the permission-denied error)
-" command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 " Turn backup off, since most stuff is in SVN, git etc. anyway...
 set nobackup
 set nowritebackup
-set nowb
 set noswapfile
 
 " Delete trailing white space on save, useful for some filetypes
@@ -280,7 +245,6 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 " Specify the behavior when switching between buffers 
 " Changing to useopen only to get better behaviour out of Ack
 try
-  " set switchbuf=useopen,usetab,newtab
   set switchbuf=useopen
   set stal=2
 catch
@@ -296,10 +260,6 @@ map <leader>q :e ~/buffer<cr>
 " Quickly open a markdown buffer for scribble
 map <leader>x :e ~/buffer.md<cr>
 
-" Toggle paste mode on and off
-" don't really understand what this does
-map <leader>pp :setlocal paste!<cr>
-
 
 "----------"
 " Movement "
@@ -309,48 +269,3 @@ map <leader>pp :setlocal paste!<cr>
 " This caused such headache not understanding why online suggestions didn't work for me, but now I know I can go to actual start of line with |
 map 0 ^
 
-" Move a line of text using ALT+[jk] or Command+[jk] on mac
-" These don't work, try to incorporate this instead: https://www.vim.org/scripts/script.php?script_id=1590
-"nmap <M-j> mz:m+<cr>`z
-"nmap <M-k> mz:m-2<cr>`z
-"vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-"vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-"if has("mac") || has("macunix")
-"  nmap <D-j> <M-j>
-"  nmap <D-k> <M-k>
-"  vmap <D-j> <M-j>
-"  vmap <D-k> <M-k>
-"endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions - check if these are used
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Returns true if paste mode is enabled
-"function! HasPaste()
-"    if &paste
-"        return 'PASTE MODE  '
-"    endif
-"    return ''
-"endfunction
-"
-"
-"function! CmdLine(str)
-"    call feedkeys(":" . a:str)
-"endfunction 
-"
-"function! VisualSelection(direction, extra_filter) range
-"    let l:saved_reg = @"
-"    execute "normal! vgvy"
-"
-"    let l:pattern = escape(@", "\\/.*'$^~[]")
-"    let l:pattern = substitute(l:pattern, "\n$", "", "")
-"
-"    if a:direction == 'gv'
-"        call CmdLine("Ack '" . l:pattern . "' " )
-"    elseif a:direction == 'replace'
-"        call CmdLine("%s" . '/'. l:pattern . '/')
-"    endif
-"
-"    let @/ = l:pattern
-"    let @" = l:saved_reg
-"endfunction
