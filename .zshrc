@@ -65,6 +65,9 @@ if [ -f '/Users/olhmr/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/olhmr/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/olhmr/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/olhmr/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Use Java 11: https://medium.com/w-logs/installing-java-11-on-macos-with-homebrew-7f73c1e9fadf
+export JAVA_HOME=$(/usr/libexec/java_home -v11)
+
 #--------------------#
 #       Aliases      #
 #--------------------#
