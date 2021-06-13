@@ -228,6 +228,9 @@ let g:peekaboo_window="call CreateCenteredFloatingWindow()"
 " neoterm "
 "---------"
 
+" :h terminal-input
+tnoremap <Esc> <C-\><C-n>
+
 nnoremap <leader>tq :exec('T cat % \| bq query --max_rows=10')
 nnoremap <leader>td :exec('T cat % \| bq_dry')<CR>
 nnoremap <leader>tf :exec('T cat % \| bq query --format=csv --max_rows=1000 > output.csv')
