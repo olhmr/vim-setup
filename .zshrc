@@ -14,7 +14,6 @@ fi
 export ZSH="/Users/olhmr/.oh-my-zsh"
 export PATH=$(brew --prefix openvpn)/sbin:$PATH
 export PATH="$PATH:~/workspace/beetle/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/beetle"
-export PATH="$HOME/anaconda3/bin:$PATH"
 export PATH="$HOME/clojure/bin:$PATH"
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -47,7 +46,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   autojump
-  zsh-syntax-highlighting
   zsh-autosuggestions
 )
 
@@ -75,11 +73,6 @@ if [ -f '/Users/olhmr/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/olh
 alias edit-bash='nvim ~/.zshrc'
 alias source-bash='source ~/.zshrc'
 
-# vi / vim / nvim
-alias notes='nvim ~/workspace/ad-hoc/notes/'
-alias edit-vimrc='nvim ~/.vimrc'
-alias edit-vim-runtime='nvim ~/.vim_runtime/'
-
 # Searching
 export FZF_DEFAULT_COMMAND='rg --files' # faster than the default
 function f() { # search files and open in neovim
@@ -102,10 +95,6 @@ u k8s force-cron -n ldn $1
 
 # Git and github
 alias glb='git branch -a | grep -v remote'
-function grpop() {
-  git remote prune origin
-  git pull
-}
 
 # dbt
 function dbtpp() {
