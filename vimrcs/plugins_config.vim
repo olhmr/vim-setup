@@ -252,7 +252,7 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 
 "---------"
-" jed-vim "
+" jedi-vim "
 "---------"
 
 " disable autocompletion, because we use deoplete for completion
