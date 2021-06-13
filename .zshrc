@@ -74,7 +74,7 @@ alias edit-bash='nvim ~/.zshrc'
 alias source-bash='source ~/.zshrc'
 
 # Searching
-export FZF_DEFAULT_COMMAND='rg --files' # faster than the default
+export FZF_DEFAULT_COMMAND='rg --files --hidden' # faster than the default
 function f() { # search files and open in neovim
   nvim -o `fzf --preview 'bat --style numbers,changes --color=always {} | head -500' $@`
 }
