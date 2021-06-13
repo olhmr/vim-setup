@@ -14,7 +14,7 @@ map <leader>o :BufExplorer<cr>
 "-----"
 
 let MRU_Max_Entries = 400
-map <leader>F :MRU<CR>
+map <leader>F :FZFMru<CR>
 
 
 "-----------"
