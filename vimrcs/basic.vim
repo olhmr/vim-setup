@@ -273,3 +273,8 @@ map <leader>x :e ~/buffer.md<cr>
 " This caused such headache not understanding why online suggestions didn't work for me, but now I know I can go to actual start of line with |
 map 0 ^
 
+" Move a line of text 
+nnoremap <leader>mj :m+1<CR>
+nnoremap <leader>mk :m-2<CR>
+vnoremap <leader>mj :m+1<CR>
+vnoremap <leader>mk :m-2<CR>
