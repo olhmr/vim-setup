@@ -10,7 +10,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dadbod'
 Plug 'mattn/vim-gist'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'tpope/vim-surround'
@@ -39,8 +38,5 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'preservim/nerdtree' |
   \ Plug 'Xuyuanp/nerdtree-git-plugin' |
   \ Plug 'ryanoasis/vim-devicons'
-
-" On-demand loading
-" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 call plug#end()
