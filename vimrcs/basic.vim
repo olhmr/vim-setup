@@ -115,12 +115,14 @@ endtry
 
 " Enable wildmode
 :set wildignorecase
-:set wildmode=longest,full " this is worth playing around with
+:set wildmode=longest:full,full 
 
 " Ignore compiled files in wildmode
+set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*/env/*
 
 " Configure backspace so it acts as it should act
-set backspace=eol,start,indent
+" https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
+set backspace=eol,start,indent 
 set whichwrap+=<,>,h,l
 
 " No annoying sound on errors
@@ -155,10 +157,12 @@ noremap <leader>d "+d
 "--------------------"
 
 " Set to auto read when a file is changed from the outside
+" https://stackoverflow.com/questions/2490227/how-does-vims-autoread-work/20418591
 set autoread
-au FocusGained,BufEnter * checktime
+au FocusGained,BufEnter * :silent! noautocmd !
 
 " Fast saving
+nmap <leader>w :w!<CR>
 
 " Turn backup off, since most stuff is in SVN, git etc. anyway...
 set nobackup
