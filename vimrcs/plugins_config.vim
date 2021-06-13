@@ -236,11 +236,12 @@ nnoremap <leader>tq :exec('T cat % \| bq query --max_rows=10')
 nnoremap <leader>td :exec('T cat % \| bq_dry')<CR>
 nnoremap <leader>tf :exec('T cat % \| bq query --format=csv --max_rows=1000 > output.csv')
 nnoremap <leader>ts <Plug>(neoterm-repl-send)
+nnoremap <leader>tbd :exec('T bq query "select * from `uswitch-ldn.region-europe-west2.INFORMATION_SCHEMA.SCHEMATA`" --max_rows=200')
 
 " REPL
-nnoremap <leader>sf :TREPLSendFile
-nnoremap <leader>sl :TREPLSendLine
-nnoremap <leader>ss :TREPLSendLine
+nnoremap <leader>sf :TREPLSendFile<CR>
+nnoremap <leader>sl :TREPLSendLine<CR>
+vnoremap <leader>ss :TREPLSendSelection<CR>
 
 "-----------"
 " UltiSnips "
