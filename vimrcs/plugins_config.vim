@@ -239,6 +239,10 @@ nnoremap <leader>ts <Plug>(neoterm-repl-send)
 nnoremap <leader>tbd :exec('T bq query "select * from `uswitch-ldn.region-europe-west2.INFORMATION_SCHEMA.SCHEMATA`" --max_rows=200')
 
 " REPL
+let g:neoterm_repl_python = 'python3 -m IPython' " this requires any virtual environment to already be activated
+let g:neoterm_repl_enable_ipython_paste_magic=1
+let g:neoterm_bracketed_paste=0
+
 nnoremap <leader>sf :TREPLSendFile<CR>
 nnoremap <leader>sl :TREPLSendLine<CR>
 vnoremap <leader>ss :TREPLSendSelection<CR>
