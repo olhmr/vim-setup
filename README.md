@@ -1,2 +1,2 @@
-# vim-setup
-Setup for vim / neovim
+# dotfiles
+Setup for vim / neovim and zsh
