@@ -245,7 +245,8 @@ let g:neoterm_bracketed_paste=0
 
 nnoremap <leader>sf :TREPLSendFile<CR>
 nnoremap <leader>sl :TREPLSendLine<CR>
-vnoremap <leader>ss :TREPLSendSelection<CR>
+vnoremap <leader>sl :TREPLSendSelection<CR>
+
 
 "-----------"
 " UltiSnips "
